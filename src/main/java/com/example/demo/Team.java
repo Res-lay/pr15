@@ -1,13 +1,11 @@
 package com.example.demo;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import javax.script.ScriptEngine;
 
 @Entity
+@Table(name="team")
 public class Team {
 
     @Id
@@ -25,7 +23,8 @@ public class Team {
         return name;
     }
     Team(){}
-
+    @OneToMany
+    public Footballer footballer;
     Team(String name, String creationDate){
         this.creationDate = creationDate;
         this.name = name;

@@ -12,11 +12,6 @@ public class TeamController {
     @Autowired
     private TeamRepos teamRepos;
 
-    Team team1 = new Team("Red", "1995");
-    Team team2 = new Team("Black", "2010");
-    Team team3 = new Team("White", "2001");
-
-
     @GetMapping
     public Iterable<Team> find(){ return teamRepos.findAll();}
 
